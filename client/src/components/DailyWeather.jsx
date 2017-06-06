@@ -7,7 +7,7 @@ render() {
     return (
         <li>
         <p>{(epochTime).toGMTString().slice(0,3)}</p>
-        <p>{this.props.day.summary}</p>
+        <p>{this.props.day.icon}</p>
         <p>Max: {this.props.day.temperatureMax}&#8457;/Min: {this.props.day.temperatureMin}&#8457;</p>
         </li>
     )

@@ -98,6 +98,7 @@ render() {
                 <button>Search</button>
             </form>
             <Link to='/history'>Search History</Link>
+            <a href='https://darksky.net/poweredby/'>Powered by Dark Sky</a>
             {this.displayWeather()}
         </div>
     )

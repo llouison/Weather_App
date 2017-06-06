@@ -7,7 +7,7 @@ render() {
     return (
         <li>
         <p>{(epochTime).toGMTString().slice(16,22)}</p>
-        <p>{this.props.hour.summary}</p>
+        <p>{this.props.hour.icon}</p>
         <p>{this.props.hour.temperature}&#8457;</p>
         </li>
     )
