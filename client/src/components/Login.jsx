@@ -28,31 +28,28 @@ class Login extends Component {
     return (
       <div className='page'>
         <div className='main_container'>
-        <div className='form_container'>
         <form
           className="registration_form"
           onSubmit={this.props.handleLoginSubmit}
         >
-          <label>Username:
           <input
             type="text"
             value={this.state.inputUserNameValue}
             name='username'
+            placeholder='Username'
             onChange={this.handleInputUserNameChange}
-          /></label><br/>
-
-          <label>Password:
+          /><br/>
           <input
             type="password"
             value={this.state.inputPasswordValue}
             name='password'
+            placeholder='Password'
             onChange={this.handleInputPasswordChange}
-          /></label><br/>
-          
+          /><br/>
           <button>Login</button>
         </form>
-        <Link to='/register'>Register New User</Link>
-        </div>
+        <p>or</p>
+        <Link to='/register' className='button'>Register New User</Link>
         </div>
       </div>
     );

@@ -115,9 +115,6 @@ constructor(props) {
     return (
       <Router>
         <div className='app'>
-        <header>
-            <h1>SkyCast Weather</h1>
-          </header>
         <Route exact path='/' 
               component={Index} 
               user={this.state.user} 

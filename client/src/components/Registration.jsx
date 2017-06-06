@@ -57,47 +57,43 @@ class Registration extends Component {
           className="registration_form"
           onSubmit={this.props.handleRegistrationSubmit}
         >
-          <label>Username:
           <input
             type="text"
             value={this.state.inputUserNameValue}
             name='username'
+            placeholder='Username'
             onChange={this.handleInputUserNameChange}
-          /></label><br/>
-
-          <label>First Name:
+          /><br/>
           <input
             type="text"
             value={this.state.inputFirstNameValue}
             name='firstname'
+            placeholder='First Name'
             onChange={this.handleInputFirstNameChange}
-          /></label><br/>
-
-          <label>Last Name:
+          /><br/>
           <input
             type="text"
             value={this.state.inputLastNameValue}
             name='lastname'
+            placeholder='Last Name'
             onChange={this.handleInputLastNameChange}
-          /></label><br/>
-
-          <label>Email:
+          /><br/>
           <input
             type="text"
             value={this.state.inputEmailValue}
             name='email'
+            placeholder='Email'
             onChange={this.handleInputEmailChange}
-          /></label><br/>
-
-          <label>Password:
+          /><br/>
           <input
             type="password"
             value={this.state.inputPasswordValue}
             name='password'
+            placeholder='Password'
             onChange={this.handleInputPasswordChange}
-          /></label><br/>
-          <p>By checking this box, you allow SkyCast to track your location to display weather information</p>
-          <label>I agree<input type="checkbox" name="permission"/></label>
+          /><br/>
+          <p className='permission'>By checking this box, you allow SkyCast to track your location to display weather information</p>
+          <input type="checkbox" className='check'/>
         
           <button>Register</button>
         </form>
