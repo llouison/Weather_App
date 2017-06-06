@@ -134,6 +134,7 @@ button, .button {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-bottom: 5px;
+  display: inline-block;
 }
 #main_icon {
   width: 100px;
@@ -161,6 +162,15 @@ ul li {
   align-items: center;
   overflow: scroll;
   margin: 5px 0;
+}
+/*Desktop Media Query*/
+@media only screen and (min-width: 400px) {
+.attribution {
+  width: 15vw;
+}
+.daily, .history {
+  height: 300px;
+}
 }
 
 
