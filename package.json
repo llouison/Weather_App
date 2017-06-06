@@ -1,0 +1,31 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "mobile app for weather forecasts",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debugging": "DEBUG=*:* npm run dev"
+  },
+  "author": "lisa louison",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "isomorphic-fetch": "^2.2.1",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^5.8.2"
+  }
+}
