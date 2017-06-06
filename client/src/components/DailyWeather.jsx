@@ -8,7 +8,8 @@ render() {
         <li>
         <p>{(epochTime).toGMTString().slice(0,3)}</p>
         <section className={this.props.day.icon}></section>
-        <p><span className='max'>{Math.ceil(this.props.day.temperatureMax)}&#8457;</span> / <span className='min'>{Math.ceil(this.props.day.temperatureMin)}&#8457;</span></p>
+        <p className='max'>{Math.ceil(this.props.day.temperatureMax)}&#8457;</p>
+        <p className='min'>{Math.ceil(this.props.day.temperatureMin)}&#8457;</p>
         </li>
     )
 }

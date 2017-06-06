@@ -93,8 +93,7 @@ class Registration extends Component {
             onChange={this.handleInputPasswordChange}
           /><br/>
           <p className='permission'>By checking this box, you allow SkyCast to track your location to display weather information</p>
-          <input type="checkbox" className='check'/>
-        
+          <input type="checkbox" className='check'/><br/>
           <button>Register</button>
         </form>
         </div>
