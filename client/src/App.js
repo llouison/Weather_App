@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Index from './components/Index';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import Search from './components/Search';
@@ -114,9 +115,14 @@ constructor(props) {
     return (
       <Router>
         <div className='app'>
-        <main>
+        <header>
             <h1>SkyCast Weather</h1>
-          </main>
+          </header>
+        <Route exact path='/' 
+              component={Index} 
+              user={this.state.user} 
+              userId={this.state.userId}
+              isLoggedIn={this.state.isLoggedIn}/>
         <Route 
               path='/login' 
               render={() => ( this.state.isLoggedIn 

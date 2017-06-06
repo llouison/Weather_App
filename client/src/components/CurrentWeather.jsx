@@ -7,7 +7,7 @@ render() {
     return (
         <div>
             <h2>{this.props.weatherInfo.locationInfo}</h2>
-            <h3>{this.props.weatherInfo.weatherInfo.currently.temperature}&#8457;</h3>
+            <h3>{Math.ceil(this.props.weatherInfo.weatherInfo.currently.temperature)}&#8457;</h3>
             <h3>{this.props.weatherInfo.weatherInfo.currently.icon}</h3>
         </div>
     )
