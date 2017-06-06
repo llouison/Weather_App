@@ -34,6 +34,9 @@ color: #fff;
   flex-direction: column;
   justify-content: center;
 }
+hr {
+  margin: 10px 0;
+}
 /*Text*/
 .locationName {
   font-size: 25px;
@@ -45,13 +48,18 @@ a {
 }
 li {
   list-style: none;
-  border-bottom: 0.5px solid white;
   width: 50vw;
 }
 .permission {
   font-size: 12px;
   line-height: 1.em;
   margin: 0 20px;
+}
+.max {
+  font-weight: 700;
+}
+.min {
+  font-weight: 100;
 }
 
 /*Form*/
@@ -71,6 +79,10 @@ button, .button {
   padding: 5px 8px;
   background: transparent;
   margin: 5px;
+}
+.button {
+  width: 50vw;
+  align-self: center;
 }
 .check {
   width: 20px;
@@ -108,10 +120,25 @@ button, .button {
   background: url('./images/cloudy-day.png');
 }
 .clear-day, .clear-night, .rain, .snow, .sleet, .wind, .fog, .cloudy, .partly-cloudy-day, .partly-cloudy-night{
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+#main_icon {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+/*Weather*/
+.daily {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+ul li {
+  margin: 10px;
+}
+
 
 

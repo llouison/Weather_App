@@ -48,8 +48,6 @@ class Login extends Component {
           /><br/>
           <button>Login</button>
         </form>
-        <p>or</p>
-        <Link to='/register' className='button'>Register New User</Link>
         </div>
       </div>
     );

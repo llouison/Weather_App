@@ -59,24 +59,22 @@ handleSearchSubmit(event){
       if (this.state.weatherInfo !== null) {
           return (
             <div className='main_container'>
-                <p>Current</p>
                 <CurrentWeather weatherInfo={this.state.weatherInfo} />
-                <p>Daily</p>
-                <ul>
-                    {this.state.weatherInfo.weatherInfo.daily.data.map((day, index) =>{
-                    return(
-                    <DailyWeather
-                        day={day}
-                        key={index}
-                    />)
-                    })}
-                </ul>
-                <p>Hourly</p>
-                <ul>
+                <ul className='daily'>
                     {this.state.weatherInfo.weatherInfo.hourly.data.map((hour, index) =>{
                     return(
                     <HourlyWeather
                         hour={hour}
+                        key={index}
+                    />)
+                    })}
+                </ul>
+                <hr/>
+                <ul className='daily'>
+                    {this.state.weatherInfo.weatherInfo.daily.data.map((day, index) =>{
+                    return(
+                    <DailyWeather
+                        day={day}
                         key={index}
                     />)
                     })}
@@ -90,7 +88,6 @@ render() {
     return (
         <div className='main_container'>
             <div className='column'>
-                <p className="App-intro">Begin your search {this.state.username}</p>
                 <form 
                     className="search_form"
                     onSubmit={this.handleSearchSubmit}
