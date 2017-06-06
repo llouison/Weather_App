@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import CurrentWeather from './CurrentWeather';
 import HourlyWeather from './HourlyWeather';
 import DailyWeather from './DailyWeather';
+import History from './History';
 import { Link } from 'react-router-dom'
+import {Tabs,Tab} from 'react-bootstrap';
 
 class Search extends Component {
 constructor(props) {
@@ -21,7 +23,7 @@ constructor(props) {
 
 handleInputSearchChange(event) {
     this.setState({
-    inputSearchValue: event.target.value
+        inputSearchValue: event.target.value
     });
 }
 
@@ -43,42 +45,53 @@ handleSearchSubmit(event){
         console.log(responseJson.data);
         this.updateState(responseJson.data);
     });
-  }
+}
 
-  updateState(data){
-      console.log('updating state to' , data)
+updateState(data){
+    console.log('updating state to' , data)
     this.setState((prevState) => {
-      return {
-        weatherInfo: data,
-      }
+        return {
+            weatherInfo: data,
+        }
     })
-  }
+}
 
-  displayWeather(){
-      console.log(this.state.weatherInfo);
-      if (this.state.weatherInfo !== null) {
-          return (
+displayWeather(){
+    console.log(this.state.weatherInfo);
+    if (this.state.weatherInfo !== null) {
+        return (
             <div className='main_container'>
                 <CurrentWeather weatherInfo={this.state.weatherInfo} />
-                <ul className='daily'>
-                    {this.state.weatherInfo.weatherInfo.hourly.data.map((hour, index) =>{
-                    return(
-                    <HourlyWeather
-                        hour={hour}
-                        key={index}
-                    />)
-                    })}
-                </ul>
-                <hr/>
-                <ul className='daily'>
-                    {this.state.weatherInfo.weatherInfo.daily.data.map((day, index) =>{
-                    return(
-                    <DailyWeather
-                        day={day}
-                        key={index}
-                    />)
-                    })}
-                </ul>
+                <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+                    <Tab eventKey={1} title="Hourly" className="Foodtab">
+                        <ul className='daily'>
+                        {this.state.weatherInfo.weatherInfo.hourly.data.map((hour, index) =>{
+                            return(
+                                <HourlyWeather
+                                    hour={hour}
+                                    key={index}
+                                />)
+                        })}
+                        </ul>
+                    </Tab>
+                    <Tab eventKey={2} title="Forecast" className="Nighttab">
+                        <ul className='daily'>
+                        {this.state.weatherInfo.weatherInfo.daily.data.map((day, index) =>{
+                            return(
+                                <DailyWeather
+                                    day={day}
+                                    key={index}
+                                />)
+                        })}
+                        </ul>
+                    </Tab>
+                    <Tab eventKey={3} title="History" className="Nighttab">
+                        <History 
+                            userId={this.props.userId}
+                            username={this.props.username}
+                        />
+                    </Tab>
+                </Tabs>
             </div>
           )
       }
@@ -95,7 +108,6 @@ render() {
                     <input type='text' name='search' placeholder='enter a location' />
                     <button>Search</button>
                 </form>
-                <Link to='/history' className='button'>Search History</Link>
                 {this.displayWeather()}
                 <a href='https://darksky.net/poweredby/'><img className='attribution' src={require('../images/darksky.png')} /></a>
             </div>

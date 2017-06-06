@@ -1,56 +1,54 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 
 class History extends Component {
-constructor(props) {
-super(props);
-this.state = {
-    username: this.props.username,
-    userId: this.props.userId,
-    usersSearch: [],
-}
-this.getUsersHistory = this.getUsersHistory.bind(this);
-this.updateUsersSearch = this.updateUsersSearch.bind(this);
-this.emptyList = this.emptyList.bind(this);
-this.renderSearchList = this.renderSearchList.bind(this);
-}
+  constructor(props) {
+  super(props);
+  this.state = {
+      username: this.props.username,
+      userId: this.props.userId,
+      usersSearch: [],
+  }
+  this.getUsersHistory = this.getUsersHistory.bind(this);
+  this.updateUsersSearch = this.updateUsersSearch.bind(this);
+  this.emptyList = this.emptyList.bind(this);
+  this.renderSearchList = this.renderSearchList.bind(this);
+  }
 
-componentDidMount(){
-    this.getUsersHistory();
-}
+  componentDidMount(){
+      this.getUsersHistory();
+  }
 
-getUsersHistory(){
-fetch(`/api/users/${this.props.userId}`)
-      .then((response) => {
-        return response.json()
-      })
-      .then((responseJson) => {
-          console.log(responseJson);
-        this.updateUsersSearch(responseJson.data.usersSearch);
+  getUsersHistory(){
+    fetch(`/api/users/${this.props.userId}`)
+    .then((response) => {
+      return response.json()
+    })
+    .then((responseJson) => {
+      console.log(responseJson);
+      this.updateUsersSearch(responseJson.data.usersSearch);
     });
   }
 
-   updateUsersSearch(Search){
-     this.setState((prevState) => {
+  updateUsersSearch(Search){
+    this.setState((prevState) => {
       return {
         usersSearch: Search,
       }
 	  })
   }
 
-   emptyList(){
+  emptyList(){
     return(
       <div>
-        <p>{this.props.username}, there is nothing in your search history</p>
-        <Link to='/search'>Start A Search</Link>
+        <p>No Search History</p>
+        <div className='emptySearch'></div>
       </div>
     )
   }
 
   renderSearchList(){
     return(
-        <div className='main_container'>
-          <Link to='/search' className='button'>Back to Search</Link>
+        <div className='main_container history'>
           {this.state.usersSearch.map((query, index) => {
           return (
             <li 
