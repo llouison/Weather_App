@@ -42,6 +42,11 @@ hr {
   font-size: 25px;
   font-weight: 700;
 }
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px 0;
+}
 a {
   color: #fff;
   text-decoration: none;
