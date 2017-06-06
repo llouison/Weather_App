@@ -76,6 +76,7 @@ input {
   border: none;
   padding: 5px;
   margin: 10px;
+  color: #254e70;
 }
 button, .button {
   color: #fff;
@@ -124,11 +125,15 @@ button, .button {
 .partly-cloudy-day {
   background: url('./images/cloudy-day.png');
 }
-.clear-day, .clear-night, .rain, .snow, .sleet, .wind, .fog, .cloudy, .partly-cloudy-day, .partly-cloudy-night{
+.emptySearch{
+   background: url('./images/history.png');
+}
+.clear-day, .clear-night, .rain, .snow, .sleet, .wind, .fog, .cloudy, .partly-cloudy-day, .partly-cloudy-night, .emptySearch {
   width: 50px;
   height: 50px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  margin-bottom: 5px;
 }
 #main_icon {
   width: 100px;
@@ -137,12 +142,25 @@ button, .button {
 }
 /*Weather*/
 .daily {
+  height: 200px;
   display: flex;
   flex-direction: row;
   overflow: scroll;
+  align-items: center;
 }
 ul li {
   margin: 10px;
+}
+.nav-tabs {
+  display: flex;
+}
+.history {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  margin: 5px 0;
 }
 
 
