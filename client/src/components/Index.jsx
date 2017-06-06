@@ -5,10 +5,13 @@ class Index extends Component {
 
 render() {
 return (
-    <div className='page'>
-    <p>Welcome to SkyCast Weather App</p>
-    <Link to='/register'>Register New User</Link>
-    <Link to='/login'>Login User</Link>
+    <div className='main_container'>
+        <div className='column'>
+            <p>Welcome to SkyCast Weather App</p>
+            <Link to='/register' className='button'>Register New User</Link>
+            <Link to='/login' className='button'>Login User</Link>
+            <img className='attribution' src={require('../images/darksky.png')} />
+        </div>
     </div>
 );
 }

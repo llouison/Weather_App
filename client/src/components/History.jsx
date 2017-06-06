@@ -49,16 +49,16 @@ fetch(`/api/users/${this.props.userId}`)
 
   renderSearchList(){
     return(
-        <div className='page'>
-            {this.state.usersSearch.map((query, index) => {
-            return (
-              <li 
-                key={index}
-              ><p>{query.search_input}</p>
-              </li>
-            )
-          })}
-          <Link to='/search'>Back to Search</Link>
+        <div className='main_container'>
+          <Link to='/search' className='button'>Back to Search</Link>
+          {this.state.usersSearch.map((query, index) => {
+          return (
+            <li 
+              key={index}
+            ><p>{query.search_input}</p>
+            </li>
+          )
+        })}
         </div>
     )
   }

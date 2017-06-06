@@ -13,7 +13,9 @@ line-height: 1.4em;
 font-family: 'slabo', sans-serif;
 color: #fff;
 }
-
+.app {
+  overflow: scroll;
+}
 #root {
   width: 100vw;
   height: 100vh;
@@ -24,11 +26,27 @@ color: #fff;
 }
 .main_container {
   text-align: center;
+  background: #254e70;
+  overflow: scroll;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /*Text*/
+.locationName {
+  font-size: 25px;
+  font-weight: 700;
+}
 a {
   color: #fff;
   text-decoration: none;
+}
+li {
+  list-style: none;
+  border-bottom: 0.5px solid white;
+  width: 50vw;
 }
 .permission {
   font-size: 12px;
@@ -59,4 +77,41 @@ button, .button {
   height: 20px;
   color: #fff;
 }
+
+/*Images*/
+.attribution {
+  width: 30vw;
+  align-self: center;
+}
+.clear-day {
+  background: url('./images/clear-day.png');
+}
+.clear-night {
+  background: url('./images/clear-night.png');
+}
+.rain, .sleet {
+  background: url('./images/rain.png');
+}
+.snow {
+  background: url('./images/snow.png');
+}
+.wind {
+  background: url('./images/wind.png');
+}
+.fog, .cloudy {
+  background: url('./images/cloud.png');
+}
+.partly-cloudy-night {
+  background: url('./images/cloudy-night.png');
+}
+.partly-cloudy-day {
+  background: url('./images/cloudy-day.png');
+}
+.clear-day, .clear-night, .rain, .snow, .sleet, .wind, .fog, .cloudy, .partly-cloudy-day, .partly-cloudy-night{
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 

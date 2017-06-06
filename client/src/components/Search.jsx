@@ -58,7 +58,7 @@ handleSearchSubmit(event){
       console.log(this.state.weatherInfo);
       if (this.state.weatherInfo !== null) {
           return (
-            <div>
+            <div className='main_container'>
                 <p>Current</p>
                 <CurrentWeather weatherInfo={this.state.weatherInfo} />
                 <p>Daily</p>
@@ -88,18 +88,20 @@ handleSearchSubmit(event){
 
 render() {
     return (
-        <div>
-            <p className="App-intro">Begin your search {this.state.username}</p>
-            <form 
-                className="search_form"
-                onSubmit={this.handleSearchSubmit}
-            >
-                <input type='text' name='search' placeholder='enter a location' />
-                <button>Search</button>
-            </form>
-            <Link to='/history'>Search History</Link>
-            <a href='https://darksky.net/poweredby/'>Powered by Dark Sky</a>
-            {this.displayWeather()}
+        <div className='main_container'>
+            <div className='column'>
+                <p className="App-intro">Begin your search {this.state.username}</p>
+                <form 
+                    className="search_form"
+                    onSubmit={this.handleSearchSubmit}
+                >
+                    <input type='text' name='search' placeholder='enter a location' />
+                    <button>Search</button>
+                </form>
+                <Link to='/history' className='button'>Search History</Link>
+                {this.displayWeather()}
+                <a href='https://darksky.net/poweredby/'><img className='attribution' src={require('../images/darksky.png')} /></a>
+            </div>
         </div>
     )
 }
