@@ -1,5 +1,5 @@
 --connecting to our main database
-\connect weather_development
+-- \connect weather_development
 
 CREATE TABLE IF NOT EXISTS users (
   id BIGSERIAL PRIMARY KEY,

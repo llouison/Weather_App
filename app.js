@@ -40,10 +40,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// setting route for deployment
+app.use(express.static(path.join(__dirname, 'client/build')));
 // setting up the route to the index page
-app.get('/api', function(req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-});
+// app.get('/api', function(req, res) {
+//     res.sendFile(__dirname + '/public/index.html');
+// });
 
 // importing the recipeHelper function for the search view
 const weatherHelpers = require('./services/weather/weatherHelpers');
