@@ -29,18 +29,18 @@ class Login extends Component {
       <div className='page'>
         <div className='main_container'>
         <form
-          className="registration_form"
+          className='registration_form'
           onSubmit={this.props.handleLoginSubmit}
         >
           <input
-            type="text"
+            type='text'
             value={this.state.inputUserNameValue}
             name='username'
             placeholder='Username'
             onChange={this.handleInputUserNameChange}
           /><br/>
           <input
-            type="password"
+            type='password'
             value={this.state.inputPasswordValue}
             name='password'
             placeholder='Password'

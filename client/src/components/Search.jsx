@@ -62,8 +62,8 @@ displayWeather(){
         return (
             <div className='main_container'>
                 <CurrentWeather weatherInfo={this.state.weatherInfo} />
-                <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-                    <Tab eventKey={1} title="Hourly" className="Foodtab">
+                <Tabs defaultActiveKey={1} id='uncontrolled-tab-example'>
+                    <Tab eventKey={1} title='Hourly' className='Foodtab'>
                         <ul className='daily'>
                         {this.state.weatherInfo.weatherInfo.hourly.data.map((hour, index) =>{
                             return(
@@ -74,7 +74,7 @@ displayWeather(){
                         })}
                         </ul>
                     </Tab>
-                    <Tab eventKey={2} title="Forecast" className="Nighttab">
+                    <Tab eventKey={2} title='Forecast' className='Nighttab'>
                         <ul className='daily'>
                         {this.state.weatherInfo.weatherInfo.daily.data.map((day, index) =>{
                             return(
@@ -85,7 +85,7 @@ displayWeather(){
                         })}
                         </ul>
                     </Tab>
-                    <Tab eventKey={3} title="History" className="Nighttab">
+                    <Tab eventKey={3} title='History' className='Nighttab'>
                         <History 
                             userId={this.props.userId}
                             username={this.props.username}
@@ -102,7 +102,7 @@ render() {
         <div className='main_container'>
             <div className='column'>
                 <form 
-                    className="search_form"
+                    className='search_form'
                     onSubmit={this.handleSearchSubmit}
                 >
                     <input type='text' name='search' placeholder='enter a location' />
