@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 //     res.sendFile(__dirname + '/public/index.html');
 // });
 
-// importing the recipeHelper function for the search view
+// importing the weatherHelper function for the search view
 const weatherHelpers = require('./services/weather/weatherHelpers');
 /* importing routes and assigning urls for books api and users api*/
 const usersRoutes = require('./routes/usersRoutes');
